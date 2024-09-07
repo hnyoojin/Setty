@@ -4,6 +4,7 @@ import { StyleSheet, View, Text, Button } from 'react-native';
 export default function HomeScreen({ navigation }) {
     return (
         <View style = {styles.screen}>
+          
         </View>
     )
 }

@@ -13,7 +13,7 @@ const LoginScreen = ({ navigation }) => {
     } else if (userId !== 'testUser' || password !== '1234') {
       Alert.alert('아이디 또는 비밀번호가 틀렸습니다.');
     } else {
-      navigation.navigate('Home');
+      navigation.navigate('Main');
     }
   };
 
@@ -33,7 +33,7 @@ const LoginScreen = ({ navigation }) => {
         secureTextEntry
       />
       <Button title="로그인" onPress={handleLogin} />
-      <TouchableOpacity onPress={() => navigation.navigate('회원가입')}>
+      <TouchableOpacity onPress={() => navigation.navigate('회원유형선택')}>
         <Text style={styles.signUpText}>회원가입</Text>
       </TouchableOpacity>
     </View>

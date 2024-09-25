@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert, StyleSheet, TouchableOpacity } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
-  const [userId, setUserId] = useState('');
+  const [userEmail, setUserEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    if (userId === '') {
-      Alert.alert('아이디를 입력해주세요.');
+    if (userEmail === '') {
+      Alert.alert('이메일를 입력해주세요.');
     } else if (password === '') {
       Alert.alert('비밀번호를 입력해주세요.');
-    } else if (userId !== 'testUser' || password !== '1234') {
-      Alert.alert('아이디 또는 비밀번호가 틀렸습니다.');
+    } else if (userEmail !== 'testUser' || password !== '1234') {
+      Alert.alert('이메일 또는 비밀번호가 틀렸습니다.');
     } else {
       navigation.navigate('Main');
     }
@@ -21,9 +21,9 @@ const LoginScreen = ({ navigation }) => {
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="아이디"
-        value={userId}
-        onChangeText={setUserId}
+        placeholder="이메일"
+        value={userEmail}
+        onChangeText={setUserEmail}
       />
       <TextInput
         style={styles.input}

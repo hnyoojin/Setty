@@ -72,7 +72,7 @@ const App = () => {
         {/* <Stack.Screen name="회원가입" component={SignUpScreen} /> */}
         <Stack.Screen name="회원유형선택" component={UserTypeScreen} />
         <Stack.Screen name="회원정보 기입 창" component={UserInfoScreen} />
-        <Stack.Screen name="Main" component={TabNavigator} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={TabNavigator} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

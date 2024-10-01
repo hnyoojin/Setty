@@ -32,10 +32,18 @@ const LoginScreen = ({ navigation }) => {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Button title="로그인" onPress={handleLogin} />
-      <TouchableOpacity onPress={() => navigation.navigate('회원유형선택')}>
-        <Text style={styles.signUpText}>회원가입</Text>
-      </TouchableOpacity>
+
+      <View style={styles.button}>
+        {/* 로그인 버튼 */}
+        <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+          <Text style={styles.loginText}>로그인</Text>
+        </TouchableOpacity>
+        
+        {/* 회원가입 버튼 */}
+        <TouchableOpacity style={styles.signUpButton} onPress={() => navigation.navigate('회원유형선택')}>
+          <Text style={styles.signUpText}>회원가입</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -48,15 +56,45 @@ const styles = StyleSheet.create({
     backgroundColor: '#E6E6FA',
   },
   input: {
+    flex: 0.04,
     backgroundColor: '#fff',
     borderRadius: 10,
-    marginVertical: 10,
+    marginVertical: '2%',
     padding: 10,
   },
-  signUpText: {
-    color: 'orange',
+  button: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  loginButton: {
+    width: '25%',
+    color: 'white',
+    fontWeight: '700',
+    marginTop: '5%',
+    backgroundColor: '#7030B8',
+    padding: '3%',
+    borderRadius: '3%',
+    marginLeft: '23%',
+  },
+  signUpButton: {
+    width: '25%',
+    color: 'white',
+    fontWeight: '700',
+    marginTop: '5%',
+    backgroundColor: '#7030B8',
+    padding: '3%',
+    borderRadius: '3%',
+    marginRight: '23%',
+  },
+  loginText: {
     textAlign: 'center',
-    marginTop: 20,
+    color: 'white',
+    fontWeight: '700',
+  },
+  signUpText: {
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: '700',
   },
 });
 

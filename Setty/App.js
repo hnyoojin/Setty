@@ -9,12 +9,11 @@ import HomeScreen from './screens/HomeScreen';
 // import SignUpScreen from './screens/SignUpScreen';
 import UserTypeScreen from './screens/UserTypeScreen';
 import UserInfoScreen from './screens/UserInfoScreen';
-import CalendarScreen from "./screens/CalendarScreen";
-import MessageScreen from "./screens/MessageScreen";
-import QuestScreen from "./screens/QuestScreen";
-import CalendarScreen from './CalendarScreen';
-import MonthlyScreen from './MonthlyScreen';
-import ScheduleInput from './ScheduleInput';
+import CalendarScreen from './screens/CalendarScreen';
+import MessageScreen from './screens/MessageScreen';
+import QuestScreen from './screens/QuestScreen';
+import MonthlyScreen from './screens/MonthlyScreen';
+import ScheduleInput from './screens/ScheduleInput'; // 상대 경로 수정
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -76,14 +75,11 @@ const App = () => {
         <Stack.Screen name="UserType" component={UserTypeScreen} />
         <Stack.Screen name="UserInfo" component={UserInfoScreen} />
         <Stack.Screen name="Main" component={TabNavigator} options={{ headerShown: false }} />
-      </Stack.Navigator>
-      <Stack.Navigator initialRouteName="CalendarScreen">
         <Stack.Screen name="CalendarScreen" component={CalendarScreen} options={{ title: '캘린더' }} />
         <Stack.Screen name="MonthlyScreen" component={MonthlyScreen} options={{ title: '일정 관리' }} />
         <Stack.Screen name="ScheduleInput" component={ScheduleInput} options={{ title: '일정 추가' }} />
       </Stack.Navigator>
     </NavigationContainer>
-    
   );
 };
 

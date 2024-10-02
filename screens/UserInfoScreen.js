@@ -2,25 +2,25 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert, TouchableOpacity, StyleSheet } from 'react-native';
 
 const UserInfoScreen = ({ navigation }) => {
-  const [userId, setUserId] = useState('');
+  const [userEmail, setUserEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordError, setPasswordError] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
 
-  const checkDuplicateId = () => {
-    if (userId === 'existingUser') {
-      setAlertMessage('사용 불가한 아이디입니다.');
+  const checkDuplicateEmail = () => {
+    if (userEmail === 'existingUser') {
+      setAlertMessage('사용 불가한 이메일입니다.');
       setShowAlert(true);
     } else {
-      Alert.alert('아이디 사용 가능');
+      Alert.alert('이메일 사용 가능');
     }
   };
 
   const handleSignUp = () => {
-    if (userId === '') {
-      setAlertMessage('아이디를 입력해주세요.');
+    if (userEmail === '') {
+      setAlertMessage('이메일를 입력해주세요.');
       setShowAlert(true);
     } else if (password === '') {
       setAlertMessage('비밀번호를 입력해주세요.');
@@ -41,13 +41,13 @@ const UserInfoScreen = ({ navigation }) => {
         </View>
       )}
       <View style={styles.inputContainer}>
-        <Text style={styles.label}>아이디</Text>
+        <Text style={styles.label}>이메일</Text>
         <TextInput
           style={styles.input}
-          value={userId}
-          onChangeText={setUserId}
+          value={userEmail}
+          onChangeText={setUserEmail}
         />
-        <TouchableOpacity style={styles.duplicateButton} onPress={checkDuplicateId}>
+        <TouchableOpacity style={styles.duplicateButton} onPress={checkDuplicateEmail}>
           <Text style={styles.duplicateButtonText}>중복확인</Text>
         </TouchableOpacity>
       </View>
@@ -84,8 +84,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#E6E6FA',
-    paddingHorizontal: 20,
+    alignItems: 'center',
+    padding: '5%',
+    backgroundColor: '#E5D0FD',
   },
   inputContainer: {
     flexDirection: 'row',
@@ -95,22 +96,25 @@ const styles = StyleSheet.create({
   label: {
     color: 'white',
     fontSize: 16,
+    fontWeight: '600',
     marginRight: 10,
   },
   input: {
     flex: 1,
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: '5%',
     paddingHorizontal: 10,
+    padding: '1%',
   },
   duplicateButton: {
     backgroundColor: '#ccc',
     padding: 10,
-    borderRadius: 5,
+    borderRadius: '5%',
     marginLeft: 10,
   },
   duplicateButtonText: {
     color: '#000',
+    fontWeight: '600',
   },
   errorText: {
     color: 'red',
@@ -118,8 +122,8 @@ const styles = StyleSheet.create({
   },
   signUpButton: {
     backgroundColor: '#6A5ACD',
-    padding: 15,
-    borderRadius: 10,
+    padding: '3.5%',
+    borderRadius: '5%',
     alignItems: 'center',
   },
   signUpButtonText: {

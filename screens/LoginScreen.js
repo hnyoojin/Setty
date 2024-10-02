@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 16,
-    backgroundColor: '#E6E6FA',
+    backgroundColor: '#E5D0FD',
   },
   input: {
     flex: 0.04,
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     marginTop: '5%',
     backgroundColor: '#7030B8',
     padding: '3%',
-    borderRadius: '3%',
+    borderRadius: '5%',
     marginLeft: '23%',
   },
   signUpButton: {
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     marginTop: '5%',
     backgroundColor: '#7030B8',
     padding: '3%',
-    borderRadius: '3%',
+    borderRadius: '5%',
     marginRight: '23%',
   },
   loginText: {

@@ -75,7 +75,7 @@ const App = () => {
         {/* <Stack.Screen name="회원가입" component={SignUpScreen} /> */}
         <Stack.Screen name="UserType" component={UserTypeScreen} />
         <Stack.Screen name="UserInfo" component={UserInfoScreen} />
-        <Stack.Screen name="Main" component={TabNavigator} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={TabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="CalendarScreen" component={CalendarScreen} options={{ title: '캘린더' }} />
         <Stack.Screen name="MonthlyScreen" component={MonthlyScreen} options={{ title: '일정 관리' }} />
         <Stack.Screen name="ScheduleInput" component={ScheduleInput} options={{ title: '일정 추가' }} />

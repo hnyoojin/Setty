@@ -40,7 +40,7 @@ const LoginScreen = ({ navigation }) => {
         </TouchableOpacity>
         
         {/* 회원가입 버튼 */}
-        <TouchableOpacity style={styles.signUpButton} onPress={() => navigation.navigate('회원유형선택')}>
+        <TouchableOpacity style={styles.signUpButton} onPress={() => navigation.navigate('UserInfo')}>
           <Text style={styles.signUpText}>회원가입</Text>
         </TouchableOpacity>
       </View>

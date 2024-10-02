@@ -73,7 +73,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
         {/* <Stack.Screen name="회원가입" component={SignUpScreen} /> */}
-        <Stack.Screen name="UserType" component={UserTypeScreen} />
+        <Stack.Screen name="UserType" component={UserTypeScreen} options={tabScreenOptions} />
         <Stack.Screen name="UserInfo" component={UserInfoScreen} />
         <Stack.Screen name="Home" component={TabNavigator} options={{ headerShown: false }} />
         <Stack.Screen name="CalendarScreen" component={CalendarScreen} options={{ title: '캘린더' }} />

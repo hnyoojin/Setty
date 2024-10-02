@@ -1,21 +1,30 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { 
+  View, 
+  Text, 
+  Button, 
+  StyleSheet,
+  TouchableOpacity 
+} from 'react-native';
 
+// 회원 가입 정보 창으로 이동
 const UserTypeScreen = ({ navigation }) => {
-  const handleMenteeSelect = () => {
-    navigation.navigate('UserInfo');
-  };
-
-  const handleMentorSelect = () => {
-    navigation.navigate('UserInfo');
-  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>당신은{'\n'}한국 생활에{'\n'}대하여...</Text>
+      
       <View style={styles.divider} />
-      <Button title="도움을 받고 싶어요" onPress={handleMenteeSelect} />
-      <Button title="도움을 주고 싶어요" onPress={handleMentorSelect} />
+      
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('UserInfo')}>
+          <Text style={styles.text}>도움을 받고 싶어요</Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('UserInfo')}>
+          <Text style={styles.text}>도움을 주고 싶어요</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -25,17 +34,35 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: '5%',
+    backgroundColor: '#E5D0FD',
   },
   headerText: {
-    fontSize: 20,
+    color: '#000069',
+    fontSize:'25%',
     textAlign: 'center',
-    marginBottom: 40,
+    marginBottom: '8%',
+    fontWeight: '600',
   },
   divider: {
-    height: 2,
-    backgroundColor: '#000',
+    height: '0.3%',
+    backgroundColor: '#7030B8',
     width: '80%',
-    marginVertical: 20,
+    marginVertical: '8%',
+  },
+  buttonContainer: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  button: {
+    backgroundColor: '#7030B8',
+    marginTop: '2%',
+    borderRadius: '3%',
+  },
+  text: {
+    color: '#E6E6FA',
+    fontWeight: '700',
+    padding: '3%',
   },
 });
 

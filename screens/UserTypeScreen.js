@@ -3,11 +3,11 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 
 const UserTypeScreen = ({ navigation }) => {
   const handleMenteeSelect = () => {
-    navigation.navigate('회원정보 기입 창');
+    navigation.navigate('UserInfo');
   };
 
   const handleMentorSelect = () => {
-    navigation.navigate('회원정보 기입 창');
+    navigation.navigate('UserInfo');
   };
 
   return (

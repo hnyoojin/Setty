@@ -5,7 +5,8 @@ import {
   TextInput, 
   Alert, 
   StyleSheet, 
-  TouchableOpacity 
+  TouchableOpacity,
+  Platform
 } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
@@ -59,14 +60,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: 16,
+    padding: Platform.OS === 'ios' ? '4%' : 16,
     backgroundColor: '#E5D0FD',
   },
   input: {
     flex: 0.04,
     backgroundColor: '#fff',
     borderRadius: 10,
-    marginVertical: '2%',
+    marginVertical: Platform.OS === 'ios' ? '2%' : 6.5,
     padding: 10,
   },
   button: {
@@ -74,24 +75,24 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   loginButton: {
-    width: '25%',
+    width: Platform.OS === 'ios' ? '25%' : 85,
     color: 'white',
     fontWeight: '700',
-    marginTop: '5%',
+    marginTop: Platform.OS === 'ios' ? '5%' : 18,
     backgroundColor: '#7030B8',
-    padding: '3%',
-    borderRadius: '5%',
-    marginLeft: '23%',
+    padding: Platform.OS === 'ios' ? '3%' : 10,
+    borderRadius: Platform.OS === 'ios' ? '5%' : 18,
+    marginLeft: Platform.OS === 'ios' ? '23%' : 80,
   },
   signUpButton: {
-    width: '25%',
+    width: Platform.OS === 'ios' ? '25%' : 85,
     color: 'white',
     fontWeight: '700',
-    marginTop: '5%',
+    marginTop: Platform.OS === 'ios' ? '5%' : 18,
     backgroundColor: '#7030B8',
-    padding: '3%',
-    borderRadius: '5%',
-    marginRight: '23%',
+    padding: Platform.OS === 'ios' ? '3%' : 10,
+    borderRadius: Platform.OS === 'ios' ? '5%' : 18,
+    marginRight: Platform.OS === 'ios' ? '23%' : 80,
   },
   loginText: {
     textAlign: 'center',

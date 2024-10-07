@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 0.04,
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginVertical: '2%',
     padding: 10,
   },
@@ -75,13 +75,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   loginButton: {
-    width: Platform.OS === 'ios' ? '25%' : 85,
+    width: '25%',
     color: 'white',
     fontWeight: '700',
     marginTop: '5%',
     backgroundColor: '#7030B8',
     padding: '3%',
-    borderRadius: Platform.OS === 'ios' ? '5%' : 18,
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginLeft: '23%',
   },
   signUpButton: {
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     marginTop: '5%',
     backgroundColor: '#7030B8',
     padding: '3%',
-    borderRadius: Platform.OS === 'ios' ? '5%' : 18,
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginRight: '23%',
   },
   loginText: {

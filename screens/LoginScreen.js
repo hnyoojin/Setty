@@ -5,7 +5,8 @@ import {
   TextInput, 
   Alert, 
   StyleSheet, 
-  TouchableOpacity 
+  TouchableOpacity,
+  Platform
 } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
@@ -14,13 +15,13 @@ const LoginScreen = ({ navigation }) => {
 
   const handleLogin = () => {
     if (userEmail === '') {
-      Alert.alert('이메일를 입력해주세요.');
+      Alert.alert('이메일을 입력해주세요.');
     } else if (password === '') {
       Alert.alert('비밀번호를 입력해주세요.');
     } else if (userEmail !== 'testUser' || password !== '1234') {
       Alert.alert('이메일 또는 비밀번호가 틀렸습니다.');
     } else {
-      navigation.navigate('Main');
+      navigation.navigate('Home');
     }
   };
 
@@ -59,13 +60,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: 16,
+    padding:'4%',
     backgroundColor: '#E5D0FD',
   },
   input: {
     flex: 0.04,
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginVertical: '2%',
     padding: 10,
   },
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     marginTop: '5%',
     backgroundColor: '#7030B8',
     padding: '3%',
-    borderRadius: '5%',
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginLeft: '23%',
   },
   signUpButton: {
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
     marginTop: '5%',
     backgroundColor: '#7030B8',
     padding: '3%',
-    borderRadius: '5%',
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginRight: '23%',
   },
   loginText: {

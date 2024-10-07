@@ -4,17 +4,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import LoginScreen from './screens/LoginScreen';
-import HomeScreen from './screens/HomeScreen';
+import LoginScreen    from './screens/LoginScreen';
+import HomeScreen     from './screens/HomeScreen';
 import UserTypeScreen from './screens/UserTypeScreen';
 import UserInfoScreen from './screens/UserInfoScreen';
 import CalendarScreen from "./screens/CalendarScreen";
-import MessageScreen from "./screens/MessageScreen";
-import QuestScreen from "./screens/QuestScreen";
-//
-import MonthlyScreen from './screens/MonthlyScreen';
-import ScheduleInput from './screens/ScheduleInput'; // 상대 경로 수정
-//
+import MessageScreen  from "./screens/MessageScreen";
+import QuestScreen    from "./screens/QuestScreen";
+import MonthlyScreen  from './screens/MonthlyScreen';
+import ScheduleInput  from './screens/ScheduleInput'; // 상대 경로 수정
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();

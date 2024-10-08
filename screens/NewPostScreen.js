@@ -87,18 +87,18 @@ const styles = StyleSheet.create({
     marginVertical: '2%',
     padding: 10,
   },
-  switch: {
-  },
+  // switch: {},
   inputContent: {
-    minHeight: '100%',
-    maxHeight: '150%',
+    minHeight: Platform.OS === 'ios' ? '100%' : 150,
+    maxHeight: Platform.OS === 'ios' ? '150%' : 150,
     backgroundColor: '#fff',
     borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginTop: 20,
     padding: 10,
   },
-  anonymousToggle: {},
-  contentInput: {},
+  // anonymousToggle: {},
+  // contentInput: {},
+  
   // button style
   buttonContainer: {
     flexDirection: 'column',

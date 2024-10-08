@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert, TextInput,Animated } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 
 const CalendarScreen = ({ navigation, route }) => {
@@ -26,7 +26,7 @@ const CalendarScreen = ({ navigation, route }) => {
     generateCalendar(currentDate);
   }, [currentDate, schedules]);
 
-  const generateCalendar = (date) => {
+    const generateCalendar = (date) => {
     const startOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
     const endOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0);
     const startDay = startOfMonth.getDay();
@@ -60,6 +60,7 @@ const CalendarScreen = ({ navigation, route }) => {
 
     setCalendar(calendarRows);
   };
+
 
   const getScheduleColor = (index) => {
     const colors = ['#D1C4E9', '#9575CD', '#512DA8'];
@@ -96,7 +97,7 @@ const CalendarScreen = ({ navigation, route }) => {
     <View style={styles.container}>
       <View style={styles.calendarBox}>
         <ScrollView style={styles.calendar}>
-          {renderCalendar()} {/* 달력 렌더링 */}
+          {renderCalendar()}
         </ScrollView>
         <TouchableOpacity style={styles.addButton} onPress={() => navigation.navigate('ScheduleInput')}>
           <Text style={styles.buttonText}>일정 추가</Text>
@@ -131,14 +132,14 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   calendarBox: {
-    flex: 0.7,
+    flex: 0.6,
     backgroundColor: 'white',
     borderRadius: 10,
     padding: 10,
     marginBottom: 10,
   },
   todoBox: {
-    flex: 0.3,
+    flex: 0.4,
     backgroundColor: 'white',
     borderRadius: 10,
     padding: 20,

@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     messageContainer: {
         alighSelf: 'flex-end',
         marginVertical: '1%',
+        borderRadius: Platform.OS === 'ios' ? '5%' : 5,
     },
     message: {
         backgroundColor: '#fff',
@@ -89,6 +90,7 @@ const styles = StyleSheet.create({
         borderColor: '#7030B8',
         borderWidth: 1,
         borderRadius: 5,
+        borderRadius: Platform.OS === 'ios' ? '2.5%' : 5,
         padding: '3%',
         marginRight: '5%',
         marginBottom: '3%',
@@ -96,7 +98,7 @@ const styles = StyleSheet.create({
     sendButton: {
         backgroundColor: '#7030B8',
         padding: '3%',
-        borderRadius: '3%',
+        borderRadius: Platform.OS === 'ios' ? '2.5%' : 3,
         marginBottom: '3%',
     },
     sendButtonText: {

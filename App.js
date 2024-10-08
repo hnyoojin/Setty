@@ -4,24 +4,26 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import LoginScreen      from './screens/LoginScreen';
-import HomeScreen       from './screens/HomeScreen';
+import LoginScreen      from './screens/LoginScreen';     // Login
 import UserTypeScreen   from './screens/UserTypeScreen';
 import UserInfoScreen   from './screens/UserInfoScreen';
-import CalendarScreen   from "./screens/CalendarScreen";
-import MessageScreen    from "./screens/MessageScreen";
-import CommunityScreen  from "./screens/CommunityScreen";
+import HomeScreen       from './screens/HomeScreen';      // Home
+import CalendarScreen   from "./screens/CalendarScreen";  // Calendar
 import MonthlyScreen    from './screens/MonthlyScreen';
-import ScheduleInput    from './screens/ScheduleInput'; // 상대 경로 수정
+import ScheduleInput    from './screens/ScheduleInput';
+import MessageScreen    from "./screens/MessageScreen";   // Message
+import CommunityScreen  from "./screens/CommunityScreen"; // Community
+import NewPost          from "./screens/NewPostScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+
 
 const TabNavigator = () => {
   return (
     <Tab.Navigator
       
-      initialRouteName="Home"
+      initialRouteName="Back"
 
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
@@ -77,9 +79,13 @@ const App = () => {
         <Stack.Screen name="UserType" component={UserTypeScreen}  options={tabScreenOptions} />
         <Stack.Screen name="UserInfo" component={UserInfoScreen}  options={tabScreenOptions} />
         <Stack.Screen name="Home"     component={TabNavigator}    options={{ headerShown: false }} />
+
         <Stack.Screen name="CalendarScreen" component={CalendarScreen}  options={{ title: '캘린더' }} />
         <Stack.Screen name="MonthlyScreen"  component={MonthlyScreen}   options={{ title: '일정 관리' }} />
         <Stack.Screen name="ScheduleInput"  component={ScheduleInput}   options={{ title: '일정 추가' }} />
+        
+        <Stack.Screen name="CommunityScreen" component={CommunityScreen}/>
+        <Stack.Screen name="NewPost"         component={NewPost} options={tabScreenOptions} />
       </Stack.Navigator>
     </NavigationContainer>
   );

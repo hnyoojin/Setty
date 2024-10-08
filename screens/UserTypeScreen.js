@@ -3,7 +3,8 @@ import {
   View, 
   Text, 
   StyleSheet,
-  TouchableOpacity 
+  TouchableOpacity,
+  Platform
 } from 'react-native';
 
 // 회원 가입 정보 창으로 이동
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: '#000069',
-    fontSize:'25%',
+    fontSize: Platform.OS === 'ios' ? '25%' : 25,
     textAlign: 'center',
     marginBottom: '8%',
     fontWeight: '600',
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#7030B8',
     marginTop: '2%',
-    borderRadius: '5%',
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
   },
   text: {
     color: '#E6E6FA',

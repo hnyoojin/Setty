@@ -5,7 +5,8 @@ import {
   TextInput, 
   Alert, 
   StyleSheet, 
-  TouchableOpacity 
+  TouchableOpacity,
+  Platform
 } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
@@ -59,13 +60,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: 16,
+    padding:'4%',
     backgroundColor: '#E5D0FD',
   },
   input: {
     flex: 0.04,
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginVertical: '2%',
     padding: 10,
   },
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     marginTop: '5%',
     backgroundColor: '#7030B8',
     padding: '3%',
-    borderRadius: '5%',
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginLeft: '23%',
   },
   signUpButton: {
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
     marginTop: '5%',
     backgroundColor: '#7030B8',
     padding: '3%',
-    borderRadius: '5%',
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginRight: '23%',
   },
   loginText: {

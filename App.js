@@ -4,15 +4,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import LoginScreen    from './screens/LoginScreen';
-import HomeScreen     from './screens/HomeScreen';
-import UserTypeScreen from './screens/UserTypeScreen';
-import UserInfoScreen from './screens/UserInfoScreen';
-import CalendarScreen from "./screens/CalendarScreen";
-import MessageScreen  from "./screens/MessageScreen";
-import QuestScreen    from "./screens/QuestScreen";
-import MonthlyScreen  from './screens/MonthlyScreen';
-import ScheduleInput  from './screens/ScheduleInput'; // 상대 경로 수정
+import LoginScreen      from './screens/LoginScreen';
+import HomeScreen       from './screens/HomeScreen';
+import UserTypeScreen   from './screens/UserTypeScreen';
+import UserInfoScreen   from './screens/UserInfoScreen';
+import CalendarScreen   from "./screens/CalendarScreen";
+import MessageScreen    from "./screens/MessageScreen";
+import CommunityScreen  from "./screens/CommunityScreen";
+import MonthlyScreen    from './screens/MonthlyScreen';
+import ScheduleInput    from './screens/ScheduleInput'; // 상대 경로 수정
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -34,7 +34,7 @@ const TabNavigator = () => {
             iconName = focused ? 'calendar' : 'calendar-outline';
           if (route.name === 'Message')
             iconName = focused ? 'chatbubble-ellipses' : 'chatbubble-ellipses-outline';
-          if (route.name === 'Quest')
+          if (route.name === 'Community')
             iconName = focused ? 'person' : 'person-outline';
 
           return <Ionicons name={iconName} size={size} color={color} />;
@@ -54,10 +54,10 @@ const TabNavigator = () => {
         },
       })}
     >
-      <Tab.Screen name="Home"     component={HomeScreen}      options={tabScreenOptions} />
-      <Tab.Screen name="Calendar" component={CalendarScreen}  options={tabScreenOptions} />
-      <Tab.Screen name="Message"  component={MessageScreen}   options={tabScreenOptions} />
-      <Tab.Screen name="Quest"    component={QuestScreen}     options={tabScreenOptions} />
+      <Tab.Screen name="Home"      component={HomeScreen}      options={tabScreenOptions} />
+      <Tab.Screen name="Calendar"  component={CalendarScreen}  options={tabScreenOptions} />
+      <Tab.Screen name="Message"   component={MessageScreen}   options={tabScreenOptions} />
+      <Tab.Screen name="Community" component={CommunityScreen} options={tabScreenOptions} />
     </Tab.Navigator>
   );
 };

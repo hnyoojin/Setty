@@ -14,16 +14,9 @@ const Item = ({title}) => (
   </View>
 );
 
-export default function QuestScreen({ navigation }) {
+export default function CommunityScreen({ navigation }) {
     return (
       <View style={styles.screen}>
-        <SafeAreaView style={styles.container}>
-          <VirtualizedList
-              initialNumToRender={4}
-              renderItem={({item}) => <Item title={item.title} />}
-              keyExtractor={item => item.id}
-          />
-        </SafeAreaView>
       </View>
     )
 }

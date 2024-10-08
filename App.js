@@ -13,7 +13,6 @@ import UserTypeScreen   from './screens/UserTypeScreen';
 import UserInfoScreen   from './screens/UserInfoScreen';
 import HomeScreen       from './screens/HomeScreen';      // Home
 import CalendarScreen   from "./screens/CalendarScreen";  // Calendar
-import MonthlyScreen    from './screens/MonthlyScreen';
 import ScheduleInput    from './screens/ScheduleInput';
 import MessageScreen    from "./screens/MessageScreen";   // Message
 import CommunityScreen  from "./screens/CommunityScreen"; // Community
@@ -85,7 +84,7 @@ const App = () => {
         <Stack.Screen name="Home"     component={TabNavigator}    options={{ headerShown: false }} />
 
         <Stack.Screen name="CalendarScreen" component={CalendarScreen}  options={{ title: '캘린더' }} />
-        <Stack.Screen name="MonthlyScreen"  component={MonthlyScreen}   options={{ title: '일정 관리' }} />
+        {/*<Stack.Screen name="MonthlyScreen"  component={MonthlyScreen}   options={{ title: '일정 관리' }} />*/}
         <Stack.Screen name="ScheduleInput"  component={ScheduleInput}   options={{ title: '일정 추가' }} />
         
         <Stack.Screen name="CommunityScreen" component={CommunityScreen}/>

@@ -63,10 +63,10 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         backgroundColor: '#E5D0FD',
-        padding: '5%',
+        padding: Platform.OS === 'ios' ? '5%' : 15,
     },
     listContainer: {
-        paddingBottom: '0%',
+        paddingBottom: Platform.OS === 'ios' ? '0%' : 0,
     },
     messageContainer: {
         alighSelf: 'flex-end',
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     inputContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: '3%',
+        marginTop: Platform.OS === 'ios' ? '5%' : 15,
     },
     input: {
         flex: 1,

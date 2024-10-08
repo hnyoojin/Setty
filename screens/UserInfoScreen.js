@@ -6,7 +6,8 @@ import {
   Button, 
   Alert, 
   TouchableOpacity, 
-  StyleSheet 
+  StyleSheet,
+  Platform
 } from 'react-native';
 
 const UserInfoScreen = ({ navigation }) => {
@@ -110,14 +111,14 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     backgroundColor: '#fff',
-    borderRadius: '5%',
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     paddingHorizontal: 10,
     padding: '1%',
   },
   duplicateButton: {
     backgroundColor: '#ccc',
     padding: 10,
-    borderRadius: '5%',
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     marginLeft: 10,
   },
   duplicateButtonText: {
@@ -131,7 +132,7 @@ const styles = StyleSheet.create({
   signUpButton: {
     backgroundColor: '#6A5ACD',
     padding: '3.5%',
-    borderRadius: '5%',
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     alignItems: 'center',
   },
   signUpButtonText: {
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
     top: '40%',
     backgroundColor: '#fff',
     padding: 20,
-    borderRadius: 10,
+    borderRadius: Platform.OS === 'ios' ? '5%' : 10,
     width: '80%',
     alignItems: 'center',
     borderWidth: 1,
